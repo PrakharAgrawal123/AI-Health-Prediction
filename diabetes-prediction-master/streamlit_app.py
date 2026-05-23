@@ -20,8 +20,15 @@ try:
 except:
     st.warning("Liver model not found")
 
+
+try:
+    models["Heart"] = pickle.load(open('models/heart_model.pkl', 'rb'))
+    scalers["Heart"] = pickle.load(open('scalers/heart_scaler.pkl', 'rb'))
+except:
+    st.warning("Heart model not found")
+
 # Placeholder for future
-models["Heart"] = None
+
 models["Kidney"] = None
 
 # ---------------- UI ---------------- #
@@ -90,9 +97,119 @@ elif disease == "Liver":
     ]
 
 # ---------------- HEART ---------------- #
+# ---------------- HEART ---------------- #
 
-elif disease == "Heart (Coming Soon)":
-    st.info("🚧 Heart Prediction model not added yet")
+elif disease == "Heart":
+
+    st.subheader("❤️ Heart Disease Prediction")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        age = st.number_input("Age", min_value=1)
+
+        sex = st.selectbox(
+            "Sex",
+            ["Male", "Female"]
+        )
+
+        cp = st.selectbox(
+            "Chest Pain Type",
+            [
+                "asymptomatic",
+                "atypical angina",
+                "non-anginal",
+                "typical angina"
+            ]
+        )
+
+        trestbps = st.number_input("Resting Blood Pressure")
+
+        chol = st.number_input("Cholesterol")
+
+        fbs = st.selectbox(
+            "Fasting Blood Sugar > 120 mg/dl",
+            ["False", "True"]
+        )
+
+    with col2:
+
+        restecg = st.selectbox(
+            "Rest ECG",
+            [
+                "normal",
+                "lv hypertrophy",
+                "st-t abnormality"
+            ]
+        )
+
+        thalach = st.number_input("Maximum Heart Rate")
+
+        exang = st.selectbox(
+            "Exercise Induced Angina",
+            ["False", "True"]
+        )
+
+        oldpeak = st.number_input("Oldpeak")
+
+        slope = st.selectbox(
+            "Slope",
+            [
+                "downsloping",
+                "flat",
+                "upsloping"
+            ]
+        )
+
+    # ---------- ENCODING ---------- #
+
+    sex = 1 if sex == "Male" else 0
+
+    cp_mapping = {
+        "asymptomatic": 0,
+        "atypical angina": 1,
+        "non-anginal": 2,
+        "typical angina": 3
+    }
+
+    cp = cp_mapping[cp]
+
+    fbs = 1 if fbs == "True" else 0
+
+    restecg_mapping = {
+        "lv hypertrophy": 0,
+        "normal": 1,
+        "st-t abnormality": 2
+    }
+
+    restecg = restecg_mapping[restecg]
+
+    exang = 1 if exang == "True" else 0
+
+    slope_mapping = {
+        "downsloping": 0,
+        "flat": 1,
+        "upsloping": 2
+    }
+
+    slope = slope_mapping[slope]
+
+    # ---------- FINAL INPUT ---------- #
+
+    input_data = [
+        age,
+        sex,
+        cp,
+        trestbps,
+        chol,
+        fbs,
+        restecg,
+        thalach,
+        exang,
+        oldpeak,
+        slope
+    ]
 
 # ---------------- KIDNEY ---------------- #
 
