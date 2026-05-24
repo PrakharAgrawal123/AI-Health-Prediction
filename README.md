@@ -1,44 +1,44 @@
 # 🧠 AI Multi Disease Prediction System
 
-A professional Machine Learning based healthcare web application that predicts the risk of multiple diseases using trained ML models and an interactive Streamlit interface.
+A Machine Learning powered healthcare web application that predicts the probability of multiple diseases using trained ML models and an interactive Streamlit interface.
 
 ## 🚀 Live Demo
-🔗 **Live App:** [Add Your Streamlit Link Here]  
-🔗 **GitHub Repository:** [Add Your GitHub Repo Link Here]
+🔗 **Live App:** [https://ai-health-predictor.streamlit.app]  
+🔗 **GitHub Repository:** [https://github.com/PrakharAgrawal123/AI-Health-Prediction]
 
 ---
 
 ## 📌 Project Overview
 
-The **AI Multi Disease Prediction System** is an intelligent healthcare prediction platform that allows users to check the probability of different diseases based on medical input parameters.
+The **AI Multi Disease Prediction System** is an intelligent healthcare prediction platform that helps users predict disease risk based on medical input parameters.
 
-This project combines:
+This project integrates:
 
-- **Machine Learning Models**
-- **Data Analysis & Visualization**
-- **Feature Engineering**
-- **Model Deployment**
-- **Interactive Streamlit UI**
+- Machine Learning
+- Data Analysis
+- Feature Engineering
+- Model Deployment
+- Interactive Streamlit Web Interface
 
-Currently implemented disease prediction modules:
+### Currently Supported Diseases
 
 ✅ Diabetes Prediction  
 ✅ Liver Disease Prediction  
 ✅ Heart Disease Prediction  
-🚧 Kidney Disease Prediction (Coming Soon)
+🚧 Kidney Disease Prediction (Dataset Added, Model Pending)
 
 ---
 
 ## ✨ Features
 
-- 🔍 Predict multiple diseases in one platform
-- 🧠 ML-based disease risk analysis
+- 🔍 Multi-disease prediction in one platform
+- 🧠 Machine Learning based prediction
 - 📊 Trained on real healthcare datasets
-- 🎨 Professional and interactive UI using Streamlit
-- ⚡ Fast predictions in real time
+- ⚡ Real-time prediction
+- 🎨 Interactive Streamlit UI
 - 📈 Data preprocessing and feature scaling
-- 💾 Pickle-based model deployment
-- 🌐 Cloud deployed and publicly accessible
+- 💾 Model saving using Pickle
+- 🌐 Public cloud deployment
 
 ---
 
@@ -55,19 +55,19 @@ Currently implemented disease prediction modules:
 
 ## 🛠 Tech Stack
 
-### Programming Language
+### Language
 - Python
 
 ### Libraries Used
+- Streamlit
 - Pandas
 - NumPy
 - Scikit-learn
 - Matplotlib
 - Seaborn
 - Pickle
-- Streamlit
 
-### Machine Learning Algorithms
+### Machine Learning Algorithms Used
 - Logistic Regression
 - K-Nearest Neighbors (KNN)
 - Naive Bayes
@@ -80,32 +80,33 @@ Currently implemented disease prediction modules:
 ## 📂 Project Structure
 
 ```plaintext
-AI-Health-Prediction/
+AI-HEALTH-PREDICTION/
 │
 ├── diabetes-prediction-master/
+│   │
+│   ├── data/
+│   │   ├── clean_liver.csv
+│   │   ├── diabetes.csv
+│   │   ├── heart_disease_uci.csv
+│   │   ├── kidney_disease.csv
+│   │
 │   ├── models/
 │   │   ├── diabities_model.pkl
-│   │   ├── liver_model.pkl
 │   │   ├── heart_model.pkl
+│   │   ├── liver_model.pkl
 │   │
 │   ├── scalers/
 │   │   ├── diabities_scaler.pkl
-│   │   ├── liver_scaler.pkl
 │   │   ├── heart_scaler.pkl
+│   │   ├── liver_scaler.pkl
 │   │
-│   ├── datasets/
-│   │   ├── diabetes.csv
-│   │   ├── liver.csv
-│   │   ├── heart.csv
+│   ├── training/
+│   │   ├── diabetes_prediction.ipynb
+│   │   ├── heart_disease_prediction.ipynb
+│   │   ├── liver_prediction.ipynb
 │   │
-│   ├── notebooks/
-│   │   ├── diabetes_training.ipynb
-│   │   ├── liver_training.ipynb
-│   │   ├── heart_training.ipynb
-│   │
-│   ├── streamlit_app.py
 │   ├── requirements.txt
-│   └── README.md
+│   └── streamlit_app.py
 ```
 
 ---
@@ -113,39 +114,38 @@ AI-Health-Prediction/
 ## ⚙️ Machine Learning Workflow
 
 ### 1️⃣ Data Collection
-Healthcare datasets collected for multiple diseases.
+Collected healthcare datasets for multiple diseases.
 
 ### 2️⃣ Data Cleaning
 - Null value handling
-- Duplicate removal
 - Missing value treatment
+- Duplicate removal
 
 ### 3️⃣ Data Visualization
 - Count plots
 - Histograms
-- Box plots
-- Heatmaps
-- Correlation analysis
+- Correlation heatmaps
+- Distribution analysis
 
 ### 4️⃣ Feature Engineering
 - Label Encoding
-- Feature Selection
-- Standardization using `StandardScaler`
+- Feature Scaling
+- Data Standardization using `StandardScaler`
 
 ### 5️⃣ Model Training
-Multiple ML models trained and compared.
+Multiple ML algorithms trained and compared.
 
 ### 6️⃣ Model Evaluation
-Accuracy scores used to select the best-performing model.
+Best model selected based on performance metrics.
 
 ### 7️⃣ Deployment
-Best models saved using Pickle and deployed with Streamlit.
+Models saved using Pickle and deployed using Streamlit.
 
 ---
 
 ## 📊 Model Performance
 
-Different ML algorithms were tested and compared:
+The following ML models were tested:
 
 - Logistic Regression
 - KNN
@@ -154,7 +154,7 @@ Different ML algorithms were tested and compared:
 - Decision Tree
 - Random Forest
 
-Best-performing model selected individually for each disease.
+Best-performing models were selected for deployment.
 
 ---
 
@@ -163,7 +163,7 @@ Best-performing model selected individually for each disease.
 ### Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git clone https://github.com/PrakharAgrawal123/AI-Health-Prediction.git
 ```
 
 ### Move into Project Folder
@@ -178,7 +178,7 @@ cd diabetes-prediction-master
 pip install -r requirements.txt
 ```
 
-### Run Application
+### Run App
 
 ```bash
 streamlit run streamlit_app.py
@@ -192,9 +192,9 @@ Users can:
 
 - Select disease type
 - Enter medical parameters
-- Get instant prediction result
+- Get instant prediction results
 
-Example:
+Example outputs:
 
 - Diabetes → Diabetic / Non-Diabetic
 - Liver → Disease / No Disease
@@ -206,20 +206,19 @@ Example:
 
 - Kidney Disease Prediction
 - Better UI/UX
-- Doctor Recommendation Module
+- Doctor Recommendation System
 - PDF Health Report Generation
-- Authentication System
-- Health History Tracking
+- User Authentication
 
 ---
 
 ## 🎯 Use Cases
 
-- Healthcare awareness
-- Educational ML project
 - Disease risk prediction
-- Internship/portfolio showcase
-- Machine Learning deployment demo
+- Healthcare awareness
+- Machine Learning project showcase
+- Internship portfolio project
+- ML deployment demonstration
 
 ---
 
@@ -232,9 +231,9 @@ Example:
 
 ---
 
-## ⭐ If you like this project
+## ⭐ Support
 
-Please consider giving it a **star ⭐ on GitHub**
+If you like this project, consider giving it a **star ⭐ on GitHub**
 
 ---
 
