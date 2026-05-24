@@ -1,10 +1,15 @@
 import streamlit as st
 import pickle
 import numpy as np
+import os
 
 # ---------------- PAGE CONFIG ---------------- #
 
 st.set_page_config(page_title="AI Health Predictor", layout="centered")
+
+# ---------------- BASE DIR ---------------- #
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ---------------- LOAD MODELS ---------------- #
 
@@ -13,26 +18,38 @@ scalers = {}
 
 # Diabetes
 try:
-    models["Diabetes"] = pickle.load(open("models/diabities_model.pkl", "rb"))
-    scalers["Diabetes"] = pickle.load(open("scalers/diabities_scaler.pkl", "rb"))
+    models["Diabetes"] = pickle.load(
+        open(os.path.join(BASE_DIR, "models", "diabities_model.pkl"), "rb")
+    )
+    scalers["Diabetes"] = pickle.load(
+        open(os.path.join(BASE_DIR, "scalers", "diabities_scaler.pkl"), "rb")
+    )
 except Exception as e:
     st.warning(f"Diabetes model error: {e}")
 
 # Liver
 try:
-    models["Liver"] = pickle.load(open("models/liver_model.pkl", "rb"))
-    scalers["Liver"] = pickle.load(open("scalers/liver_scaler.pkl", "rb"))
+    models["Liver"] = pickle.load(
+        open(os.path.join(BASE_DIR, "models", "liver_model.pkl"), "rb")
+    )
+    scalers["Liver"] = pickle.load(
+        open(os.path.join(BASE_DIR, "scalers", "liver_scaler.pkl"), "rb")
+    )
 except Exception as e:
     st.warning(f"Liver model error: {e}")
 
 # Heart
 try:
-    models["Heart"] = pickle.load(open("models/heart_model.pkl", "rb"))
-    scalers["Heart"] = pickle.load(open("scalers/heart_scaler.pkl", "rb"))
+    models["Heart"] = pickle.load(
+        open(os.path.join(BASE_DIR, "models", "heart_model.pkl"), "rb")
+    )
+    scalers["Heart"] = pickle.load(
+        open(os.path.join(BASE_DIR, "scalers", "heart_scaler.pkl"), "rb")
+    )
 except Exception as e:
     st.warning(f"Heart model error: {e}")
 
-# Kidney (not added yet)
+# Kidney
 models["Kidney"] = None
 
 # ---------------- UI ---------------- #
