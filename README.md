@@ -3,8 +3,10 @@
 A Machine Learning powered healthcare web application that predicts the probability of multiple diseases using trained ML models and an interactive Streamlit interface.
 
 ## 🚀 Live Demo
-🔗 **Live App:** [https://ai-health-predictor.streamlit.app]  
-🔗 **GitHub Repository:** [https://github.com/PrakharAgrawal123/AI-Health-Prediction]
+
+[![Live App](https://img.shields.io/badge/Live%20Demo-Open%20App-brightgreen?style=for-the-badge)](https://ai-health-predictor.streamlit.app)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/PrakharAgrawal123/AI-Health-Prediction)
 
 ---
 
