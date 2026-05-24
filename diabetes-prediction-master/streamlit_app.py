@@ -13,22 +13,22 @@ scalers = {}
 
 # Diabetes
 try:
-    models["Diabetes"] = pickle.load(open("models/diabities_model.pkl", "rb"))
-    scalers["Diabetes"] = pickle.load(open("scalers/diabities_scaler.pkl", "rb"))
+    models["Diabetes"] = pickle.load(open("diabetes-prediction-master/models/diabities_model.pkl", "rb"))
+    scalers["Diabetes"] = pickle.load(open("diabetes-prediction-master/scalers/diabities_scaler.pkl", "rb"))
 except Exception as e:
     st.warning(f"Diabetes model error: {e}")
 
 # Liver
 try:
-    models["Liver"] = pickle.load(open("models/liver_model.pkl", "rb"))
-    scalers["Liver"] = pickle.load(open("scalers/liver_scaler.pkl", "rb"))
+    models["Liver"] = pickle.load(open("diabetes-prediction-master/models/liver_model.pkl", "rb"))
+    scalers["Liver"] = pickle.load(open("diabetes-prediction-master/scalers/liver_scaler.pkl", "rb"))
 except Exception as e:
     st.warning(f"Liver model error: {e}")
 
 # Heart
 try:
-    models["Heart"] = pickle.load(open("models/heart_model.pkl", "rb"))
-    scalers["Heart"] = pickle.load(open("scalers/heart_scaler.pkl", "rb"))
+    models["Heart"] = pickle.load(open("diabetes-prediction-master/models/heart_model.pkl", "rb"))
+    scalers["Heart"] = pickle.load(open("diabetes-prediction-master/scalers/heart_scaler.pkl", "rb"))
 except Exception as e:
     st.warning(f"Heart model error: {e}")
 
