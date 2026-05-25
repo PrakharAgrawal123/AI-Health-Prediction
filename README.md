@@ -228,8 +228,7 @@ Example outputs:
 
 **Prakhar Agrawal**
 
-- 🎓 BCA Student | Aspiring Data Scientist
-- 💻 Passionate about Machine Learning & Web Development
+
 
 ---
 
